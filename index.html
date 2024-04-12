@@ -13,17 +13,17 @@
     <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
-    <script src="js/bootstrap.min.js"></script>
+    
 </head>
 <body>
     <header>
         <!-- Barra de navegación -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-            <div class="container-fluid">
+            <div class="container-fluid d-flex justify-content-between">
                 <a class="navbar-brand" href="index.html"><img height="35px" src="img/logo.png" alt="TechMaster"></a>
                 <a class="navbar-brand text-uppercase fw-semibold fs-5" href="index.html">TechMaster</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Barrabusqueda" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-search"></i>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Barrabusqueda" aria-controls="Barrabusqueda" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="Barrabusqueda">
                     <form class="d-flex mx-auto" data-bs-theme="light" role="search">
@@ -32,6 +32,11 @@
                             <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i></a></li>
+                        <li class="nav-item"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-heart"></i></a></li>
+                        <li class="nav-item"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -41,5 +46,7 @@
             
         </div>
     </section>
+    <!-- Script de bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
