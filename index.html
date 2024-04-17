@@ -14,7 +14,7 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body class="body">
+<body class="body bg-body-tertiary">
     <header>
         <!-- Barra de navegación -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -34,7 +34,7 @@
                     <div class="d-flex justify-content-center">
                         <ul class="navbar-nav">
                             <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i><span class="d-inline d-lg-none ms-3">Carrito</span></a></li>
-                            <li class="nav-item px-2"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a></li>
+                            <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalLogin" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -58,29 +58,90 @@
                                 <p class="fw-light">$500.000</p>
                             </div>
                             <button type="button" class="btn rounded-0 btn-dark">Pagar</button>
-                            <button type="button" class="btn rounded-0 btn-outline-dark">Ver carrito</button>
+                            <button type="button" class="btn rounded-0 btn-outline-dark mt-3">Ver carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de login -->
+        <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLoginLabel">Iniciar Sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control rounded-0" id="correo" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contraseña" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control rounded-0" id="contraseña">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="recordar">
+                                <label class="form-check-label" for="recordar">Recordar mi cuenta</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid d-flex flex-column">
+                            <button type="menu" class="btn rounded-0 btn-dark">Iniciar Sesión</button>
+                            <button data-bs-target="#modalCrearCuenta" data-bs-toggle="modal" type="button" class="btn rounded-0 btn-outline-dark mt-3">Crear Cuenta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de crear cuenta -->
+        <div class="modal fade" id="modalCrearCuenta" tabindex="-1" aria-labelledby="modalCrearCuentaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCrearCuentaLabel">Crear Cuenta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid d-flex flex-column">
+                            <button type="menu" class="btn rounded-0 btn-dark mb-3">Crear Cuenta</button><hr>
+                            <button data-bs-target="#modalLogin" data-bs-toggle="modal" type="button" class="btn rounded-0 btn-outline-dark">Iniciar Sesión</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Cuerpo de la pagina -->
     <section>
         <div class="container">
             
         </div>
     </section>
-    <!-- Script de bootstrap -->
+    <!-- Footer -->
     <footer>
         <div class="position-absolute bottom-0 container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
             <div class="row">
                 <div class="col-12 col-md-4 d-flex flex-column">
-                    <div class="d-flex"><img height="50" src="img/logo.png" alt=""><h1 class="h2 text-dark-emphasis align-self-center">TECHMASTER</h1></div><br>
+                    <div class="d-flex"><img height="50" src="img/logo.png" alt=""><h1 class="fs-4 text-dark-emphasis align-self-center">TECHMASTER</h1></div><br>
                     <p class="h4 text-body-secondary">¿Quienes somos?</p>
                     <p class="text-justify text-dark-emphasis">Somos una tienda de hardware de pc, con una amplia variedad de productos y accesorios para tu computadora.</p>
                 </div>
+                <div class="col-12 col-md-4 d-flex flex-column">
+                    <p class="h4 text-body-secondary">Contacto</p>
+                    <p class="text-dark-emphasis"><i class="bi bi-geo-alt-fill"></i> Dirección: Calle 123 # 456</p>
+                    <a href="tel:123 456 7890" class="text-dark-emphasis"><i class="bi bi-telephone-fill"></i> Teléfono: 123 456 7890</a>
+                    <a href="mailto:contacto@techmasterstore.cl" class="text-dark-emphasis"><i class="bi bi-envelope-fill"></i> Correo: contacto@techmasterstore.cl</a>
+                </div>
             </div>
     </footer>
+    <!-- Script de bootstrap -->
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
