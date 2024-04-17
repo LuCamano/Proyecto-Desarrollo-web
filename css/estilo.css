@@ -2,3 +2,8 @@
     background-color: #333; /* Cambia este color al oscuro que desees */
     border-color: #333; /* También puedes cambiar el color del borde */
     }
+
+.carousel-item {
+    max-height: 50vh;
+}
+
