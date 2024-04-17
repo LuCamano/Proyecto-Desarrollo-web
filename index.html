@@ -13,33 +13,57 @@
     <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
-    
 </head>
-<body>
+<body class="body">
     <header>
         <!-- Barra de navegación -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid d-flex justify-content-between">
                 <a class="navbar-brand" href="index.html"><img height="35px" src="img/logo.png" alt="TechMaster"></a>
-                <a class="navbar-brand text-uppercase fw-semibold fs-5" href="index.html">TechMaster</a>
+                <a class="navbar-brand text-uppercase fw-semibold fs-4" href="index.html">TechMaster</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Barrabusqueda" aria-controls="Barrabusqueda" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="Barrabusqueda">
+                <div class="collapse navbar-collapse justify-content-lg-between" id="Barrabusqueda">
                     <form class="d-flex mx-auto" data-bs-theme="light" role="search">
                         <div class="input-group">
-                            <input class="form-control" type="search" placeholder="Buscar" aria-label="Búsqueda">
-                            <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
+                            <input class="form-control rounded-0" type="search" placeholder="Buscar" aria-label="Búsqueda">
+                            <button class="btn rounded-0 btn-light" type="submit"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i></a></li>
-                        <li class="nav-item"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-heart"></i></a></li>
-                        <li class="nav-item"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i></a></li>
-                    </ul>
+                    <div class="d-flex justify-content-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i><span class="d-inline d-lg-none ms-3">Carrito</span></a></li>
+                            <li class="nav-item px-2"><a href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
+        <!-- Modal de carrito -->
+        <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCarritoLabel">Carrito de compras</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Aquí va el contenido del carrito -->
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid d-flex flex-column">
+                            <div class="d-flex justify-content-between">
+                                <p class="fw-medium">Sub-total: </p>
+                                <p class="fw-light">$500.000</p>
+                            </div>
+                            <button type="button" class="btn rounded-0 btn-dark">Pagar</button>
+                            <button type="button" class="btn rounded-0 btn-outline-dark">Ver carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <section>
         <div class="container">
@@ -47,6 +71,16 @@
         </div>
     </section>
     <!-- Script de bootstrap -->
+    <footer>
+        <div class="position-absolute bottom-0 container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
+            <div class="row">
+                <div class="col-12 col-md-4 d-flex flex-column">
+                    <div class="d-flex"><img height="50" src="img/logo.png" alt=""><h1 class="h2 text-dark-emphasis align-self-center">TECHMASTER</h1></div><br>
+                    <p class="h4 text-body-secondary">¿Quienes somos?</p>
+                    <p class="text-justify text-dark-emphasis">Somos una tienda de hardware de pc, con una amplia variedad de productos y accesorios para tu computadora.</p>
+                </div>
+            </div>
+    </footer>
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
