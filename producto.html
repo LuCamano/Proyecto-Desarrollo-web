@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título -->
+    <title>TechMaster | Productos</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="body bg-body-tertiary">
+    <header>
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid d-flex justify-content-between">
+                <a class="navbar-brand" href="index.html"><img height="35px" src="img/logo.png" alt="TechMaster"></a>
+                <a class="navbar-brand text-uppercase fw-semibold fs-4" href="index.html">TechMaster</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Barrabusqueda" aria-controls="Barrabusqueda" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-lg-between" id="Barrabusqueda">
+                    <form class="d-flex mx-auto" data-bs-theme="light" role="search">
+                        <div class="input-group">
+                            <input class="form-control rounded-0" type="search" placeholder="Buscar" aria-label="Búsqueda">
+                            <button class="btn rounded-0 btn-light" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                    <div class="d-flex justify-content-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i><span class="d-inline d-lg-none ms-3">Carrito</span></a></li>
+                            <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalLogin" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Modal de carrito -->
+        <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCarritoLabel">Carrito de compras</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Aquí va el contenido del carrito -->
+                        <div class="d-flex flex-column">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row">
+                                    <img src="img/3050.jpg" alt="Producto 1" height="50" width="50">
+                                    <p class="fw-medium">ASUS Nvidia GeForce RTX3050 ROG STRIX</p>
+                                </div>
+                                <p class="fw-light">$400.000</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row">
+                                    <img src="img/i7 9700.jpg" alt="Producto 2" height="50" width="50">
+                                    <p class="fw-medium">Intel Core i7-9700</p>
+                                </div>
+                                <p class="fw-light">$400.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid d-flex flex-column">
+                            <div class="d-flex justify-content-between">
+                                <p class="fw-medium">Sub-total: </p>
+                                <p class="fw-light">$800.000</p>
+                            </div>
+                            <button type="button" class="btn rounded-0 btn-dark">Pagar</button>
+                            <a href="cart.html" class="btn rounded-0 btn-outline-dark mt-3">Ver carrito</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de login -->
+        <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLoginLabel">Iniciar Sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo electrónico</label>
+                                <input placeholder="juanito@gmail.com" type="email" class="form-control rounded-0" id="correo" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contraseña" class="form-label">Contraseña</label>
+                                <input placeholder="********" type="password" class="form-control rounded-0" id="contraseña">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="recordar">
+                                <label class="form-check-label" for="recordar">Recordar mi cuenta</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid d-flex flex-column">
+                            <button type="button" class="btn rounded-0 btn-dark">Iniciar Sesión</button>
+                            <button data-bs-target="#modalCrearCuenta" data-bs-toggle="modal" type="button" class="btn rounded-0 btn-outline-dark mt-3">Crear Cuenta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de crear cuenta -->
+        <div class="modal fade" id="modalCrearCuenta" tabindex="-1" aria-labelledby="modalCrearCuentaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCrearCuentaLabel">Crear Cuenta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3 d-flex flex-row justify-content-between">
+                                <div class="d-inline">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input placeholder="Juanito" type="text" class="form-control rounded-0" id="nombre">
+                                </div>
+                                <div class="d-inline">
+                                    <label for="apellidos" class="form-label">Apellidos</label>
+                                    <input placeholder="Perez" type="text" class="form-control rounded-0" id="apellidos">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo electrónico</label>
+                                <input placeholder="juanito@gmail.com" type="email" class="form-control rounded-0" id="correo" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input placeholder="Calle epica 1234, Ciudad" type="text" class="form-control rounded-0" id="direccion" aria-describedby="addresHelp">
+                            </div>
+                            <div class="mb-3 d-flex flex-row justify-content-between">
+                                <div class="d-inline">
+                                    <label for="contraseña" class="form-label">Contraseña</label>
+                                    <input placeholder="********" type="password" class="form-control rounded-0" id="contraseña">
+                                </div>
+                                <div class="d-inline">
+                                    <label for="confirmar" class="form-label">Confirmar contraseña</label>
+                                    <input placeholder="********" type="password" class="form-control rounded-0" id="confirmar">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid d-flex flex-column">
+                            <button type="menu" class="btn rounded-0 btn-dark mb-3">Crear Cuenta</button><hr>
+                            <button data-bs-target="#modalLogin" data-bs-toggle="modal" type="button" class="btn rounded-0 btn-outline-dark">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Cuerpo de la pagina -->
+    <section>
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="position-relative top-100 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
+            <div class="row">
+                <div class="col-12 col-md-6 d-flex flex-column">
+                    <div class="d-flex"><img height="50" src="img/logo.png" alt=""><h1 class="fs-4 text-dark-emphasis align-self-center">TECHMASTER</h1></div><br>
+                    <p class="h4 text-body-secondary">¿Quienes somos?</p>
+                    <p class="text-justify text-dark-emphasis">Somos una tienda de hardware de pc, con una amplia variedad de productos y accesorios para tu computadora.</p>
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column">
+                    <p class="h4 text-body-secondary">Contacto</p>
+                    <p class="text-dark-emphasis"><i class="bi bi-geo-alt-fill"></i> Dirección: Calle 123 # 456</p>
+                    <a href="tel:123 456 7890" class="text-dark-emphasis"><i class="bi bi-telephone-fill"></i> Teléfono: 123 456 7890</a>
+                    <a href="mailto:contacto@techmasterstore.cl" class="text-dark-emphasis"><i class="bi bi-envelope-fill"></i> Correo: contacto@techmasterstore.cl</a>
+                </div>
+            </div>
+    </footer>
+    <!-- Script de bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
