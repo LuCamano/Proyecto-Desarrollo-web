@@ -164,11 +164,58 @@
     </header>
     <!-- Cuerpo de la pagina -->
     <section>
-        
         <div class="container">
         <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
-            <br>
-            
+            <h1 class="mb-4">Mi Carrito de Compras</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- Lista de productos -->
+                    <div class="card mb-3">
+                        <div class="d-flex justify-content-between mt-3 mx-3">
+                            <div class="d-flex flex-row">
+                                <img src="img/3050.jpg" alt="Producto 1" height="100" width="100">
+                                <p class="fw-medium px-2">ASUS Nvidia GeForce RTX3050 ROG STRIX</p>
+                                <div  class="mx-auto" style="width: 200px;"></div>
+                                <form class="d-flex mx-4">
+                                    <button type="submit" class="d-flex mb-auto pb-1 pt-1">-</button>
+                                    <input style="width: 25%;" name="cantidadd" type="number" class="form-control rounded-0 mb-auto" id="cantidad" value="1">
+                                    <button type="submit" class="d-flex mb-auto pb-1 pt-1">+</button>
+                                </form>
+                                <p class="fw-medium">$400.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Agrega más productos aquí -->
+                    <div class="card mb-3">
+                        <div class="d-flex justify-content-between mt-3 mx-3">
+                            <div class="d-flex flex-row">
+                                <img src="img/i7 9700.jpg" alt="Producto 1" height="100" width="100">
+                                <p class="fw-medium px-2">Intel Core i7-9700</p>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Eliminar</button>
+                                    <button type="button" class="btn btn-primary">Comprar ahora</button>
+                                </div>
+                                <form class="d-flex mx-4">
+                                    <button type="submit" class="d-flex mb-auto pb-1 pt-1">-</button>
+                                    <input style="width: 25%;" name="cantidadd" type="number" class="form-control rounded-0 mb-auto" id="cantidad" value="1">
+                                    <button type="submit" class="d-flex mb-auto pb-1 pt-1">+</button>
+                                </form>
+                                <p class="fw-medium">$400.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- Resumen del carrito -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Resumen del Carrito</h5>
+                            <p class="card-text">Total: $800.000</p>
+                            <a href="#" class="btn btn-primary">Pagar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
     </section>
     <!-- Footer -->
