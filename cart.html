@@ -164,15 +164,70 @@
     </header>
     <!-- Cuerpo de la pagina -->
     <section>
-        
-        <div class="container">
+        <div class="container" style="min-height: 50cap;">
         <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
-            
+            <h1 class="mb-4">Mi Carrito de Compras</h1>
+            <div class="row gap-3 gap-md-0">
+                <div class="col-md-8 d-flex flex-column gap-3">
+                    <!-- Lista de productos -->
+                    <div class="card rounded-0">
+                        <div class="card-body">
+                            <div class="d-flex flex-column flex-lg-row justify-content-between">
+                                <div class="d-flex flex-column flex-md-row">
+                                    <img src="img/3050.jpg" alt="Producto 1" height="100" width="100">
+                                    <p class="fw-medium px-2">ASUS Nvidia GeForce RTX3050 ROG STRIX</p>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <p class="fw-medium">$400.000</p>
+                                    <form class="d-flex">
+                                        <div class="input-group">
+                                            <button onclick="cambiarValor('cantidad', -1)" type="button" class="btn btn-secondary rounded-0">-</button>
+                                            <input style="width: 50px;" name="cantidad" type="number" class="form-control rounded-0 mx-auto" id="cantidad" min="0" value="1">
+                                            <button onclick="cambiarValor('cantidad', 1)" type="button" class="btn btn-secondary rounded-0">+</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Agrega más productos aquí -->
+                    <div class="card rounded-0">
+                        <div class="card-body">
+                            <div class="d-flex flex-column flex-lg-row justify-content-between">
+                                <div class="d-flex flex-column flex-md-row">
+                                    <img src="img/i7 9700.jpg" alt="Producto 1" height="100" width="100">
+                                    <p class="fw-medium px-2">Intel Core i7-9700</p>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <p class="fw-medium">$400.000</p>
+                                    <form>
+                                        <div class="input-group">
+                                            <button onclick="cambiarValor('cantidad1', -1)" type="button" class="btn btn-secondary rounded-0">-</button>
+                                            <input style="width: 50px;" name="cantidad1" type="number" class="form-control rounded-0 mx-auto" id="cantidad1" min="0" value="1">
+                                            <button onclick="cambiarValor('cantidad1', 1)" type="button" class="btn btn-secondary rounded-0">+</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <!-- Resumen del carrito -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Resumen del Carrito</h5>
+                            <p class="card-text">Total: $800.000</p>
+                            <a href="#" class="btn rounded-0 btn-dark">Pagar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
     </section>
     <!-- Footer -->
     <footer>
-        <div class="position-relative top-100 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
+        <div class="position-relative bottom-0 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
             <div class="row">
                 <div class="col-12 col-md-6 d-flex flex-column">
                     <div class="d-flex"><img height="50" src="img/logo.png" alt=""><h1 class="fs-4 text-dark-emphasis align-self-center">TECHMASTER</h1></div><br>
@@ -189,5 +244,13 @@
     </footer>
     <!-- Script de bootstrap -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        function cambiarValor(idInput, incremento) {
+            const input = document.getElementById(idInput);
+            const valorActual = parseInt(input.value);
+            const nuevoValor = Math.max(valorActual + incremento, 0);
+            input.value = nuevoValor;
+        }
+    </script>
 </body>
 </html>
