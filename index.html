@@ -34,7 +34,31 @@
                     <div class="d-flex justify-content-center">
                         <ul class="navbar-nav">
                             <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i><span class="d-inline d-lg-none ms-3">Carrito</span></a></li>
-                            <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalLogin" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a></li>
+                            <li class="nav-item px-2 d-lg-none"><a data-bs-toggle="modal" data-bs-target="#modalLogin" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a></li>
+                            <li class="nav-item dropstart px-2 d-none d-lg-block">
+                                <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
+                                <div class="dropdown-menu rounded-0" data-bs-theme="light">
+                                    <form class="px-4 py-3">
+                                        <div class="mb-3">
+                                            <label for="correo" class="form-label">Correo</label>
+                                            <input type="text" class="form-control" id="correo" name="correo" placeholder="juanito@mail.com" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="*********">
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                                <label class="form-check-label" for="dropdownCheck">
+                                                    Recordar
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-dark rounded-0">Iniciar Sesión</button>
+                                    </form>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -154,8 +178,8 @@
                     </div>
                     <div class="modal-footer">
                         <div class="container-fluid d-flex flex-column">
-                            <button type="menu" class="btn rounded-0 btn-dark mb-3">Crear Cuenta</button><hr>
-                            <button data-bs-target="#modalLogin" data-bs-toggle="modal" type="button" class="btn rounded-0 btn-outline-dark">Iniciar Sesión</button>
+                            <button type="menu" class="btn rounded-0 btn-dark mb-3">Crear Cuenta</button><hr class="d-inline d-md-none">
+                            <button data-bs-target="#modalLogin" data-bs-toggle="modal" type="button" class="btn rounded-0 btn-outline-dark d-inline d-md-none">Iniciar Sesión</button>
                         </div>
                     </div>
                 </div>
@@ -214,21 +238,23 @@
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="card h-100 rounded-0">
                         <div class="card-body d-flex flex-column">
-                            <a href="producto.html"><img src="img/3050.jpg" class="object-fit-cover producto w-100" height="255" alt="rtx 3050"></a>
+                            <a href="producto.html"><img src="img/3050.jpg" class="object-fit-cover w-100" height="255" alt="rtx 3050"></a>
                             <h5 class="card-title">Tarjeta Gráfica</h5>
                             <p class="card-text">ASUS ROG Nvidia GeForce RTX3050</p>
-                            <hr>
-                            <a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="w-100 align-self-end btn rounded-0 btn-outline-dark">Agregar al carrito</a>
+                        </div>
+                        <div class="card-footer">
+                            <a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="w-100 btn rounded-0 btn-outline-dark">Agregar al carrito</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="card h-100 rounded-0">
                         <div class="card-body">
-                            <a href="producto.html"><img src="img/i7 9700.jpg" class="object-fit-cover producto w-100" height="255" alt="i7 9700"></a>
+                            <a href="producto.html"><img src="img/i7 9700.jpg" class="object-fit-cover w-100" height="255" alt="i7 9700"></a>
                             <h5 class="card-title">Procesador</h5>
                             <p class="card-text mb-5">Intel Core i7 9700</p>
-                            <hr>
+                        </div>
+                        <div class="card-footer">
                             <a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="w-100 btn rounded-0 btn-outline-dark">Agregar al carrito</a>
                         </div>
                     </div>
@@ -236,22 +262,24 @@
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="card h-100 rounded-0">
                         <div class="card-body d-flex flex-column">
-                            <a href="producto.html"><img src="img/gigabyte.jpg" class="object-fit-cover producto w-100" height="255" alt="RTX4070"></a>
+                            <a href="producto.html"><img src="img/gigabyte.jpg" class="object-fit-cover w-100" height="255" alt="RTX4070"></a>
                             <h5 class="card-title">Tarjeta Gráfica</h5>
                             <p class="card-text">GIGABYTE Nvidia GeForce RTX4070 Windforce OC</p>
-                            <hr>
-                            <a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="w-100 align-self-end btn rounded-0 btn-outline-dark">Agregar al carrito</a>
+                        </div>
+                        <div class="card-footer">
+                            <a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="w-100 btn rounded-0 btn-outline-dark">Agregar al carrito</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="card h-100 rounded-0">
                         <div class="card-body h-100 d-flex flex-column">
-                            <a href="producto.html"><img src="img/1080 msi.png" class="object-fit-cover producto w-100" height="255" alt="GTX1080"></a>
+                            <a href="producto.html"><img src="img/1080 msi.png" class="object-fit-cover w-100" height="255" alt="GTX1080"></a>
                             <h5 class="card-title">Tarjeta Gráfica</h5>
                             <p class="card-text mb-5">MSI Nvidia GeForce GTX1080</p>
-                            <hr>
-                            <a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="w-100 align-self-end btn rounded-0 btn-outline-dark">Agregar al carrito</a>
+                        </div>
+                        <div class="card-footer">
+                            <a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="w-100 btn rounded-0 btn-outline-dark">Agregar al carrito</a>
                         </div>
                     </div>
                 </div>
@@ -276,6 +304,6 @@
             </div>
     </footer>
     <!-- Script de bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
