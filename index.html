@@ -37,14 +37,16 @@
                             <li class="nav-item dropstart px-2">
                                 <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
                                 <div class="dropdown-menu rounded-0" data-bs-theme="light">
+                                    <h5 class="px-4 pt-3 text-center">Iniciar Sesión</h5>
                                     <form class="px-4 py-3 needs-validation" novalidate>
                                         <div class="mb-3">
                                             <label for="correo" class="form-label">Correo</label>
-                                            <input type="text" class="form-control" id="correo" name="correo" placeholder="juanito@mail.com" required>
+                                            <input type="text" class="form-control rounded-0" id="correo" name="correo" placeholder="juanito@mail.com" onblur="validarCorreo()" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Contraseña</label>
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="*********" required>
+                                            <input type="password" class="form-control rounded-0" id="password" name="password" placeholder="*********" required>
+                                            <a class="text-nowrap" href="#">¿Olvidaste tu contraseña?</a>
                                         </div>
                                         <div class="mb-3">
                                             <div class="form-check">
@@ -55,7 +57,8 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-dark rounded-0">Iniciar Sesión</button>
-                                    </form>
+                                    </form><hr>
+                                    <p class="px-4">¿No tienes una cuenta? <a href="registrarse.html">Registrarse</a></p>
                                 </div>
                             </li>
                         </ul>
