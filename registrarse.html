@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
+    <!-- Script de JQUERY -->
+    <script src="js/jquery-3.7.1.min.js"></script>
 </head>
 <body class="body bg-body-tertiary">
     <header>
@@ -110,23 +112,44 @@
     <!-- Cuerpo de la pagina -->
     <section>
             <div class="container">
-                <div class="col-12 col-md-8 col-lg-6 position-absolute top-50 start-50 translate-middle">
-                    <div class="mt-5 card" data-bs-theme="dark">
+                <div class="col-12 col-md-8 col-lg-6 position-relative top-50 start-50 translate-middle-x">
+                    <div class="my-5 card" data-bs-theme="dark">
                         <div class="card-header">
                             <h2 class="text-center">Registrarse</h2>
                         </div>
                         <form class="d-flex flex-column needs-validation px-4 py-3 card-body text-center" action="index.html" method="post" novalidate>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label">Nombre *</label>
+                                        <input type="text" class="form-control rounded-0" name="nombre" id="nombre" placeholder="Ejemplo: Juanito" required/>
+                                        <div class="invalid-feedback">Ingrese un nombre válido</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="apellido" class="form-label">Apellido *</label>
+                                        <input type="text" class="form-control rounded-0" name="apellido" id="apellido" placeholder="Ejemplo: Perez" required/>
+                                        <div class="invalid-feedback">Ingrese un apellido válido</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rutUser" class="form-label">Rut*</label>
+                                <input type="text" class="form-control rounded-0" id="rutUser" name="rutUser" placeholder="11.222.333-k" required>
+                                <div class="invalid-feedback">Ingrese un rut válido</div>
+                            </div>
                             <div class="mb-3">
                                 <label for="correoRegistro" class="form-label">E-mail *</label>
-                                <input type="email" class="form-control rounded-0" name="correoRegistro" id="correoRegistro" placeholder="Juanito@mail.cl" required/>
+                                <input type="email" class="form-control rounded-0" name="correoRegistro" id="correoRegistro" placeholder="Ejemplo: Juanito@mail.cl" required/>
                                 <div class="invalid-feedback">Por favor ingrese un correo válido</div>
                             </div>
                             <div class="mb-3">
                                 <label for="telNum" class="form-label">Teléfono *</label>
                                 <div class="input-group">
                                     <span class="input-group-text rounded-0" id="codPais">+56</span>
-                                    <input type="tel" class="form-control rounded-0" name="telNum" id="telNum" aria-describedby="codPais" placeholder="987654321" pattern="[0-9]{9}" required/>
-                                    <div class="invalid-feedback">Ingrese un telefono valido</div>
+                                    <input type="tel" class="form-control rounded-0" name="telNum" id="telNum" aria-describedby="codPais" placeholder="Ej: 987654321" pattern="[0-9]{9}" required/>
+                                    <div class="invalid-feedback">Ingrese un teléfono valido</div>
                                 </div>
                                     
                             </div>
@@ -153,7 +176,7 @@
     </section>
     <!-- Footer -->
     <footer>
-        <div class="position-absolute top-100 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
+        <div class="position-relative top-100 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
             <div class="row">
                 <div class="col-12 col-md-6 d-flex flex-column">
                     <div class="d-flex"><img height="50" src="img/logo.png" alt=""><h1 class="fs-4 text-dark-emphasis align-self-center">TECHMASTER</h1></div><br>
