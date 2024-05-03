@@ -19,8 +19,8 @@
         <!-- Barra de navegación -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid d-flex justify-content-between">
-                <a class="navbar-brand" href="home.html"><img height="35px" src="img/logo.png" alt="TechMaster"></a>
-                <a class="navbar-brand text-uppercase fw-semibold fs-4" href="home.html">TechMaster</a>
+                <a class="navbar-brand" href="index.html"><img height="35px" src="img/logo.png" alt="TechMaster"></a>
+                <a class="navbar-brand text-uppercase fw-semibold fs-4" href="index.html">TechMaster</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Barrabusqueda" aria-controls="Barrabusqueda" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,14 +33,33 @@
                     </form>
                     <div class="d-flex justify-content-center">
                         <ul class="navbar-nav">
-                            <li class="nav-item px-2"><a href="admin.html" class="nav-link"><i class="bi bi-wrench"></i><span class="d-inline d-lg-none ms-3">Administración</span></a></li>
                             <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i><span class="d-inline d-lg-none ms-3">Carrito</span></a></li>
                             <li class="nav-item dropstart px-2">
                                 <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="perfil.html" class="dropdown-item">Ver perfil</a></li>
-                                    <li><a href="index.html" class="dropdown-item">Cerrar Sesión</a></li>
-                                </ul>
+                                <div class="dropdown-menu rounded-0" data-bs-theme="light">
+                                    <h5 class="px-4 pt-3 text-center">Iniciar Sesión</h5>
+                                    <form class="px-4 py-3 needs-validation" action="home.html" method="post" novalidate>
+                                        <div class="mb-3">
+                                            <label for="correo" class="form-label">Correo</label>
+                                            <input type="email" class="form-control rounded-0" id="correo" name="correo" placeholder="juanito@mail.com" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control rounded-0" id="password" name="password" placeholder="*********" required>
+                                            <a class="text-nowrap" href="#">¿Olvidaste tu contraseña?</a>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                                <label class="form-check-label" for="remember">
+                                                    Recordar
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-dark rounded-0">Iniciar Sesión</button>
+                                    </form><hr>
+                                    <p class="px-4">¿No tienes una cuenta? <a href="registrarse.html">Registrarse</a></p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -89,50 +108,43 @@
         </div>
     </header>
     <!-- Cuerpo de la pagina -->
-    <section class="container-fluid text-center customer-access">
-            <div class="row position-relative">
-                <div class="col-12 bg-dark">
-                    <div class="row align-items-center">
-                        <div class="col-12 col-md-4 offset-md-2 col-lg-6 offset-lg-1 mx-auto my-5">
-                            <div class="row custom-box text-light">
-                                <div class="col-12 my-4">
-                                    <h1 class="h5">Crea tu cuenta</h1>
-                                    <form>
-                                        <div class="custom-form">
-                                            <div id="contacto">
-                                                <div id="contacts_email" class="field text-field my-3">
-                                                    <label>Email *</label><br>
-                                                    <input class="text col-12" required="required" value="" type="email" name="customer[email]" id="customer_email">
-                                                </div>
-                                                <div id="contacts_phone" class="field text-field my-3">
-                                                    <label>Teléfono *</label><br>
-                                                    <input class="text col-12" required="required" value="" type="tel" name="customer[phone]" id="customer_phone">
-                                                </div>
-                                            </div>
-                                            <div id="customer_details_password">
-                                                <div id="details_password" class="field text-field my-3">
-                                                    <label for="customer_details_password">Contraseña <em>*</em></label><br>
-                                                    <input class="text col-12" required="required" minlength="6" autocomplete="new-password" type="password" name="customer[password]" id="customer_password" aria-autocomplete="list">
-                                                </div>
-                                                <div id="details_confirm_password my-3" class="field text-field">
-                                                    <label for="customer_details_confirm_password">Confirmar Contraseña  <em>*</em></label><br>
-                                                    <input class="text col-12" type="password" name="customer[password_confirmation]" id="customer_password_confirmation">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div id="contacts_accepts_marketing" class="field checkbox-field my-3">
-                                                    <input name="customer[accepts_marketing]" type="hidden" value="0" autocomplete="off"><input type="checkbox" value="1" name="customer[accepts_marketing]" id="customer_accepts_marketing">
-                                                    <label for="customer_accepts_marketing">Subscríbete para recibir noticias y ofertas exclusivas</label>
-                                                </div>
-                                            </div>
-                                            <div class="actions">
-                                                <input type="submit" name="commit" value="Confirmar" id="register_customer" class="button button--rectangular my-3" data-disable-with="Confirmar"><br>
-                                                <a href="home.html" title="Ir al Inicio">Ir al Inicio</a>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+    <section>
+            <div class="container">
+                <div class="col-12 col-md-8 col-lg-6 position-absolute top-50 start-50 translate-middle">
+                    <div class="mt-5 card" data-bs-theme="dark">
+                        <div class="card-header">
+                            <h2 class="text-center">Registrarse</h2>
+                        </div>
+                        <form class="d-flex flex-column needs-validation px-4 py-3 card-body text-center" action="index.html" method="post" novalidate>
+                            <div class="mb-3">
+                                <label for="correoRegistro" class="form-label">E-mail *</label>
+                                <input type="email" class="form-control rounded-0" name="correoRegistro" id="correoRegistro" placeholder="Juanito@mail.cl" required/>
+                                <div class="invalid-feedback">Por favor ingrese un correo válido</div>
                             </div>
+                            <div class="mb-3">
+                                <label for="telNum" class="form-label">Teléfono *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text rounded-0" id="codPais">+56</span>
+                                    <input type="tel" class="form-control rounded-0" name="telNum" id="telNum" aria-describedby="codPais" placeholder="987654321" pattern="[0-9]{9}" required/>
+                                    <div class="invalid-feedback">Ingrese un telefono valido</div>
+                                </div>
+                                    
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña *</label>
+                                <input type="password" class="form-control rounded-0" name="password" id="password" placeholder="**********" required/>
+                                <div class="invalid-feedback">Ingrese una contraseña válida</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Re-pass" class="form-label">Confirmar contraseña *</label>
+                                <input type="password" class="form-control rounded-0" name="Re-pass" id="Re-pass" placeholder="**********" required/>
+                                <div class="invalid-feedback">La Contraseña debe coincidir</div>
+                            </div>
+                            <hr>
+                            <button class="btn btn-success rounded-0" type="submit">Crear Cuenta</button>
+                        </form>
+                        <div class="card-footer">
+                            <p class="text-center">¿Ya tienes una cuenta? <a href="index.html">Iniciar Sesión</a></p>
                         </div>
                     </div>
                 </div>
@@ -141,7 +153,7 @@
     </section>
     <!-- Footer -->
     <footer>
-        <div class="position-relative top-100 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
+        <div class="position-absolute top-100 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
             <div class="row">
                 <div class="col-12 col-md-6 d-flex flex-column">
                     <div class="d-flex"><img height="50" src="img/logo.png" alt=""><h1 class="fs-4 text-dark-emphasis align-self-center">TECHMASTER</h1></div><br>
