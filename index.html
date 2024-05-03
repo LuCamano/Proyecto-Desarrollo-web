@@ -38,7 +38,7 @@
                                 <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
                                 <div class="dropdown-menu rounded-0" data-bs-theme="light">
                                     <h5 class="px-4 pt-3 text-center">Iniciar Sesión</h5>
-                                    <form class="px-4 py-3 needs-validation" novalidate>
+                                    <form class="px-4 py-3 needs-validation" action="home.html" method="post" novalidate>
                                         <div class="mb-3">
                                             <label for="correo" class="form-label">Correo</label>
                                             <input type="email" class="form-control rounded-0" id="correo" name="correo" placeholder="juanito@mail.com" required>
@@ -101,54 +101,6 @@
                             </div>
                             <button type="button" class="btn rounded-0 btn-dark">Pagar</button>
                             <a href="cart.html" class="btn rounded-0 btn-outline-dark mt-3">Ver carrito</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal de crear cuenta -->
-        <div class="modal fade" id="modalCrearCuenta" tabindex="-1" aria-labelledby="modalCrearCuentaLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalCrearCuentaLabel">Crear Cuenta</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3 d-flex flex-row justify-content-between">
-                                <div class="d-inline">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input placeholder="Juanito" type="text" class="form-control rounded-0" id="nombre">
-                                </div>
-                                <div class="d-inline">
-                                    <label for="apellidos" class="form-label">Apellidos</label>
-                                    <input placeholder="Perez" type="text" class="form-control rounded-0" id="apellidos">
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="correo" class="form-label">Correo electrónico</label>
-                                <input placeholder="juanito@gmail.com" type="email" class="form-control rounded-0" id="correo" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="direccion" class="form-label">Dirección</label>
-                                <input placeholder="Calle epica 1234, Ciudad" type="text" class="form-control rounded-0" id="direccion" aria-describedby="addresHelp">
-                            </div>
-                            <div class="mb-3 d-flex flex-row justify-content-between">
-                                <div class="d-inline">
-                                    <label for="contraseña" class="form-label">Contraseña</label>
-                                    <input placeholder="********" type="password" class="form-control rounded-0" id="contraseña">
-                                </div>
-                                <div class="d-inline">
-                                    <label for="confirmar" class="form-label">Confirmar contraseña</label>
-                                    <input placeholder="********" type="password" class="form-control rounded-0" id="confirmar">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="container-fluid d-flex flex-column">
-                            <button type="menu" class="btn rounded-0 btn-dark mb-3">Crear Cuenta</button><hr class="d-inline d-md-none">
-                            <button data-bs-target="#modalLogin" data-bs-toggle="modal" type="button" class="btn rounded-0 btn-outline-dark d-inline d-md-none">Iniciar Sesión</button>
                         </div>
                     </div>
                 </div>
