@@ -89,10 +89,57 @@
         </div>
     </header>
     <!-- Cuerpo de la pagina -->
-    <section>
-        <div class="container">
-        <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
-            
+    <section class="container-fluid text-center customer-access">
+            <div class="row position-relative">
+                <div class="col-12 col-lg-6 bg-dark">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1 mx-auto my-5">
+                            <div class="row custom-box text-light">
+                                <div class="col-12 my-4">
+                                    <h1 class="h5">Crea tu cuenta</h1>
+                                    <form>
+                                        <div class="custom-form">
+                                            <div id="contacto">
+                                                <div id="contacts_email" class="field text-field my-3">
+                                                    <label>Email *</label><br>
+                                                    <input class="text col-12" required="required" value="" type="email" name="customer[email]" id="customer_email">
+                                                </div>
+                                                <div id="contacts_phone" class="field text-field my-3">
+                                                    <label>Teléfono *</label><br>
+                                                    <input class="text col-12" required="required" value="" type="tel" name="customer[phone]" id="customer_phone">
+                                                </div>
+                                            </div>
+                                            <div id="customer_details_password">
+                                                <div id="details_password" class="field text-field my-3">
+                                                    <label for="customer_details_password">Contraseña <em>*</em></label><br>
+                                                    <input class="text col-12" required="required" minlength="6" autocomplete="new-password" type="password" name="customer[password]" id="customer_password" aria-autocomplete="list">
+                                                </div>
+                                                <div id="details_confirm_password my-3" class="field text-field">
+                                                    <label for="customer_details_confirm_password">Confirmar Contraseña  <em>*</em></label><br>
+                                                    <input class="text col-12" type="password" name="customer[password_confirmation]" id="customer_password_confirmation">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div id="contacts_accepts_marketing" class="field checkbox-field my-3">
+                                                    <input name="customer[accepts_marketing]" type="hidden" value="0" autocomplete="off"><input type="checkbox" value="1" name="customer[accepts_marketing]" id="customer_accepts_marketing">
+                                                    <label for="customer_accepts_marketing">Subscríbete para recibir noticias y ofertas exclusivas</label>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <input type="submit" name="commit" value="Confirmar" id="register_customer" class="button button--rectangular my-3" data-disable-with="Confirmar"><br>
+                                            <a href="/customer/login" title="¿Ya tienes cuenta? Ingresa aquí">¿Ya tienes cuenta? Ingresa aquí</a><br><a href="home.html" title="Ir al Inicio">Ir al Inicio</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos labore quam aut harum quae repellat natus, temporibus non explicabo a reiciendis minus unde incidunt aperiam, sapiente earum. Odit, commodi. Incidunt. </p>
+                </div>
+            </div>
             <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
     </section>
     <!-- Footer -->
