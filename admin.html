@@ -90,8 +90,42 @@
     </header>
     <!-- Cuerpo de la pagina -->
     <section>
-        <div class="container">
-        <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
+        <div class="container-fluid">
+            <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
+            <h1 class="text-center text-dark-emphasis">Administración</h1>
+            <!-- Nav tabs -->
+            <ul class="nav nav-underline" id="admin-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="agregar-producto-tab" data-bs-toggle="tab" data-bs-target="#agregar-producto" type="button"
+                        role="tab" aria-controls="agregar-producto" aria-selected="true">
+                        Agregar producto
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="product-list-tab" data-bs-toggle="tab" data-bs-target="#product-list" type="button"
+                        role="tab" aria-controls="product-list" aria-selected="false">
+                        Listado de productos
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button"
+                        role="tab" aria-controls="messages" aria-selected="false">
+                        Listado de pedidos
+                    </button>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="agregar-producto" role="tabpanel" aria-labelledby="agregar-producto-tab">
+                    Aquí va la interfaz de agregar un producto
+                </div>
+                <div class="tab-pane" id="product-list" role="tabpanel" aria-labelledby="product-list-tab">
+                    Aquí va el listado de productos
+                </div>
+                <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                    Aquí va el listado de pedidos
+                </div>
+            </div>
             
             <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
     </section>

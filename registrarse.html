@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
-    <!-- Script de JQUERY -->
-    <script src="js/jquery-3.7.1.min.js"></script>
 </head>
 <body class="body bg-body-tertiary">
     <header>
@@ -37,7 +35,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i><span class="d-inline d-lg-none ms-3">Carrito</span></a></li>
                             <li class="nav-item dropstart px-2">
-                                <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
+                                <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="btnIniciarSesion" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
                                 <div class="dropdown-menu rounded-0" data-bs-theme="light">
                                     <h5 class="px-4 pt-3 text-center">Iniciar Sesión</h5>
                                     <form class="px-4 py-3 needs-validation" action="home.html" method="post" novalidate>
@@ -135,8 +133,8 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="rutUser" class="form-label">Rut*</label>
-                                <input type="text" class="form-control rounded-0" id="rutUser" name="rutUser" placeholder="11.222.333-k" required>
+                                <label for="rutUser" class="form-label">Rut *</label>
+                                <input type="text" class="form-control rounded-0" id="rutUser" name="rutUser" placeholder="11.222.333-k" oninput="checkRut(this)" required>
                                 <div class="invalid-feedback">Ingrese un rut válido</div>
                             </div>
                             <div class="mb-3">
@@ -167,7 +165,7 @@
                             <button class="btn btn-success rounded-0" type="submit">Crear Cuenta</button>
                         </form>
                         <div class="card-footer">
-                            <p class="text-center">¿Ya tienes una cuenta? <a href="index.html">Iniciar Sesión</a></p>
+                            <p class="text-center">¿Ya tienes una cuenta? <a href="#btnIniciarSesion">Iniciar Sesión</a></p>
                         </div>
                     </div>
                 </div>
@@ -195,5 +193,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Script de la página -->
     <script src="js/script.js"></script>
+    <!-- Jquery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
 </body>
 </html>
