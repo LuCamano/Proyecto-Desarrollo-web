@@ -13,14 +13,16 @@
     <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
+    <!-- Script de JQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
 </head>
 <body class="body bg-body-tertiary">
     <header>
         <!-- Barra de navegación -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid d-flex justify-content-between">
-                <a class="navbar-brand" href="home.html"><img height="35px" src="img/logo.png" alt="TechMaster"></a>
-                <a class="navbar-brand text-uppercase fw-semibold fs-4" href="home.html">TechMaster</a>
+                <a class="navbar-brand" href="index.html"><img height="35px" src="img/logo.png" alt="TechMaster"></a>
+                <a class="navbar-brand text-uppercase fw-semibold fs-4" href="index.html">TechMaster</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Barrabusqueda" aria-controls="Barrabusqueda" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,14 +35,33 @@
                     </form>
                     <div class="d-flex justify-content-center">
                         <ul class="navbar-nav">
-                            <li class="nav-item px-2"><a href="admin.html" class="nav-link"><i class="bi bi-wrench"></i><span class="d-inline d-lg-none ms-3">Administración</span></a></li>
                             <li class="nav-item px-2"><a data-bs-toggle="modal" data-bs-target="#modalCarrito" href="javascript:void(0)" class="nav-link"><i class="bi bi-cart"></i><span class="d-inline d-lg-none ms-3">Carrito</span></a></li>
                             <li class="nav-item dropstart px-2">
-                                <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="perfil.html" class="dropdown-item">Ver perfil</a></li>
-                                    <li><a href="index.html" class="dropdown-item">Cerrar Sesión</a></li>
-                                </ul>
+                                <a data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="btnIniciarSesion" href="javascript:void(0)" class="nav-link"><i class="bi bi-person"></i><span class="d-inline d-lg-none ms-3">Cuenta</span></a>
+                                <div class="dropdown-menu rounded-0" data-bs-theme="light">
+                                    <h5 class="px-4 pt-3 text-center">Iniciar Sesión</h5>
+                                    <form class="px-4 py-3 needs-validation" action="home.html" method="post" novalidate>
+                                        <div class="mb-3">
+                                            <label for="correo" class="form-label">Correo</label>
+                                            <input type="email" class="form-control rounded-0" id="correo" name="correo" placeholder="juanito@mail.com" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control rounded-0" id="password" name="password" placeholder="*********" required>
+                                            <a class="text-nowrap" href="#">¿Olvidaste tu contraseña?</a>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                                <label class="form-check-label" for="remember">
+                                                    Recordar
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-dark rounded-0">Iniciar Sesión</button>
+                                    </form><hr>
+                                    <p class="px-4">¿No tienes una cuenta? <a href="registrarse.html">Registrarse</a></p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -90,9 +111,67 @@
     </header>
     <!-- Cuerpo de la pagina -->
     <section>
-        <div class="container">
-        <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
-            
+            <div class="container">
+                <div class="col-12 col-md-8 col-lg-6 position-relative top-50 start-50 translate-middle-x">
+                    <div class="my-5 card rounded-0" data-bs-theme="dark">
+                        <div class="card-header">
+                            <h2 class="text-center">Registrarse</h2>
+                        </div>
+                        <form class="d-flex flex-column needs-validation px-4 py-3 card-body text-center" action="index.html" method="post" novalidate>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label">Nombre *</label>
+                                        <input type="text" class="form-control rounded-0" name="nombre" id="nombre" placeholder="Ejemplo: Juanito" required/>
+                                        <div class="invalid-feedback">Ingrese un nombre válido</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="apellido" class="form-label">Apellido *</label>
+                                        <input type="text" class="form-control rounded-0" name="apellido" id="apellido" placeholder="Ejemplo: Perez" required/>
+                                        <div class="invalid-feedback">Ingrese un apellido válido</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rutUser" class="form-label">Rut *</label>
+                                <input type="text" class="form-control rounded-0" id="rutUser" name="rutUser" placeholder="11.222.333-k" oninput="checkRut(this)" required>
+                                <div class="invalid-feedback">Ingrese un rut válido</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="correoRegistro" class="form-label">E-mail *</label>
+                                <input type="email" class="form-control rounded-0" name="correoRegistro" id="correoRegistro" placeholder="Ejemplo: Juanito@mail.cl" required/>
+                                <div class="invalid-feedback">Por favor ingrese un correo válido</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telNum" class="form-label">Teléfono *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text rounded-0" id="codPais">+56</span>
+                                    <input type="tel" class="form-control rounded-0" name="telNum" id="telNum" aria-describedby="codPais" placeholder="Ej: 987654321" pattern="[0-9]{9}" required/>
+                                    <div class="invalid-feedback">Ingrese un teléfono valido</div>
+                                </div>
+                                    
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña *</label>
+                                <input type="password" class="form-control rounded-0" name="password" id="password" placeholder="**********" required/>
+                                <div class="invalid-feedback">Ingrese una contraseña válida</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Re-pass" class="form-label">Confirmar contraseña *</label>
+                                <input type="password" class="form-control rounded-0" name="Re-pass" id="Re-pass" placeholder="**********" required/>
+                                <div class="invalid-feedback">La Contraseña debe coincidir</div>
+                            </div>
+                            <hr>
+                            <button class="btn btn-success rounded-0" type="submit">Crear Cuenta</button>
+                        </form>
+                        <div class="card-footer">
+                            <p class="text-center">¿Ya tienes una cuenta? <a href="#btnIniciarSesion">Iniciar Sesión</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
     </section>
     <!-- Footer -->

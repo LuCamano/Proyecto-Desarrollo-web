@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
+    <!-- Script de JQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
 </head>
 <body class="body bg-body-tertiary">
     <header>
@@ -90,8 +92,276 @@
     </header>
     <!-- Cuerpo de la pagina -->
     <section>
-        <div class="container">
-        <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
+        <div class="container-fluid min-vh-100">
+            <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
+            <h1 class="text-center text-dark-emphasis my-5">Administración</h1>
+            <!-- Nav tabs -->
+            <ul class="nav nav-underline" id="admin-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="agregar-producto-tab" data-bs-toggle="tab" data-bs-target="#agregar-producto" type="button"
+                        role="tab" aria-controls="agregar-producto" aria-selected="true">
+                        Agregar producto
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="product-list-tab" data-bs-toggle="tab" data-bs-target="#product-list" type="button"
+                        role="tab" aria-controls="product-list" aria-selected="false">
+                        Listado de productos
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pedidos-tab" data-bs-toggle="tab" data-bs-target="#pedidos" type="button"
+                        role="tab" aria-controls="pedidos" aria-selected="false">
+                        Listado de pedidos
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button"
+                        role="tab" aria-controls="users" aria-selected="false">
+                        Listado de Usuarios
+                    </button>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content mb-5">
+                <hr>
+                <div class="tab-pane active" id="agregar-producto" role="tabpanel" aria-labelledby="agregar-producto-tab">
+                    <h2 class="text-dark-emphasis text-justify mb-3">Agregar un producto</h2>
+                    <form class="needs-validation" action="#" method="post" enctype="multipart/form-data" novalidate>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre del producto</label>
+                            <input type="text" class="form-control rounded-0" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipo" class="form-label">Tipo de producto</label>
+                            <select class="form-select rounded-0" id="tipo" name="tipo" required>
+                                <option selected disabled value="">Selecciona un tipo de producto</option>
+                                <option value="1">Procesador</option>
+                                <option value="2">Tarjeta de video</option>
+                                <option value="3">Placa madre</option>
+                                <option value="4">Memoria RAM</option>
+                                <option value="5">Disco duro</option>
+                                <option value="6">Fuente de poder</option>
+                                <option value="7">Gabinete</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción del producto</label>
+                            <textarea class="form-control rounded-0" id="descripcion" name="descripcion" placeholder="Especificaciones técnicas..." required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio del producto</label>
+                            <input type="number" class="form-control rounded-0" id="precio" name="precio" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="stock" class="form-label">Stock del producto</label>
+                            <input type="number" class="form-control rounded-0" id="stock" name="stock" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imagen" class="form-label">Imagen del producto</label>
+                            <input type="file" class="form-control rounded-0" id="imagen" name="imagen" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark rounded-0">Agregar producto</button>
+                </div>
+                <div class="tab-pane" id="product-list" role="tabpanel" aria-labelledby="product-list-tab">
+                    <div class="col-12 d-flex flex-column">
+                        <h2 class="text-dark-emphasis text-justify mb-3">Listado de productos</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">*</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Stock</th>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Intel Core i7-9700</td>
+                                        <td>Procesador</td>
+                                        <td>8 núcleos, 8 hilos, 3.0 GHz</td>
+                                        <td>$400.000</td>
+                                        <td>10</td>
+                                        <td><img src="img/i7 9700.jpg" alt="Intel Core i7-9700" height="50" width="50"></td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-warning rounded-0">Editar</button>
+                                            <button type="button" class="btn btn-outline-danger rounded-0">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>ASUS Nvidia GeForce RTX3050 ROG STRIX</td>
+                                        <td>Tarjeta de video</td>
+                                        <td>8 GB GDDR6, 128-bit</td>
+                                        <td>$400.000</td>
+                                        <td>10</td>
+                                        <td><img src="img/3050.jpg" alt="ASUS Nvidia GeForce RTX3050 ROG STRIX" height="50" width="50"></td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-warning rounded-0">Editar</button>
+                                            <button type="button" class="btn btn-outline-danger rounded-0">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>GIGABYTE Nvidia GeForce RTX4070 Windforce OC</td>
+                                        <td>Tarjeta de video</td>
+                                        <td>12 GB GDDR6X, 192-bit</td>
+                                        <td>$800.000</td>
+                                        <td>7</td>
+                                        <td><img src="img/gigabyte.jpg" alt="GIGABYTE Nvidia GeForce RTX4070 Windforce OC" height="50" width="50"></td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-warning rounded-0">Editar</button>
+                                            <button type="button" class="btn btn-outline-danger rounded-0">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
+                    <h2 class="text-dark-emphasis text-justify mb-3">Listado de pedidos</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">*</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Juan Pérez</td>
+                                    <td>Intel Core i7-9700</td>
+                                    <td>1</td>
+                                    <td>$400.000</td>
+                                    <td>01/01/2022</td>
+                                    <td>
+                                        <select disabled name="estado1" id="estado1" class="selector-estado form-select rounded-0">
+                                            <option value="1">En preparación</option>
+                                            <option value="2">En camino</option>
+                                            <option disabled value="3">Entregado</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button type="button" id="completar1" class="completar btn btn-success rounded-0">Completar</button>
+                                        <button type="button" id="editar1" class="editar-estado btn btn-outline-warning rounded-0">Editar</button>
+                                        <button type="button" class="btn btn-outline-danger rounded-0">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Juan Pérez</td>
+                                    <td>ASUS Nvidia GeForce RTX3050 ROG STRIX</td>
+                                    <td>1</td>
+                                    <td>$400.000</td>
+                                    <td>01/01/2022</td>
+                                    <td>
+                                        <select disabled name="estado2" id="estado2" class="selector-estado form-select rounded-0">
+                                            <option value="1">En preparación</option>
+                                            <option value="2">En camino</option>
+                                            <option disabled value="3">Entregado</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button type="button" id="completar2" class="completar btn btn-success rounded-0">Completar</button>
+                                        <button type="button" id="editar2" class="editar-estado btn btn-outline-warning rounded-0">Editar</button>
+                                        <button type="button" class="btn btn-outline-danger rounded-0">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Juan Pérez</td>
+                                    <td>GIGABYTE Nvidia GeForce RTX4070 Windforce OC</td>
+                                    <td>1</td>
+                                    <td>$800.000</td>
+                                    <td>01/01/2022</td>
+                                    <td>
+                                        <select disabled name="estado3" id="estado3" class="selector-estado form-select rounded-0">
+                                            <option value="1">En preparación</option>
+                                            <option selected value="2">En camino</option>
+                                            <option disabled value="3">Entregado</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button type="button" id="completar3" class="completar btn btn-success rounded-0">Completar</button>
+                                        <button type="button" id="editar3" class="editar-estado btn btn-outline-warning rounded-0">Editar</button>
+                                        <button type="button" class="btn btn-outline-danger rounded-0">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="users" role="tabpanel" aria-labelledby="users-tab">
+                    <h2 class="text-dark-emphasis text-justify mb-3">Listado de usuarios</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">*</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Dirección</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Juan Pérez</td>
+                                    <td>juanito.perez@gmail.com</td>
+                                    <td>123 456 7890</td>
+                                    <td>Calle 123 # 456</td>
+                                    <td>
+                                        <button type="button" id="desbloquear1" class="desbloquear-usuario btn btn-outline-success d-none rounded-0">Desbloquear</button>
+                                        <button type="button" id="bloquear1" class="bloquear-usuario btn btn-outline-warning rounded-0">Bloquear</button>
+                                        <button type="button" id="delete-user1" class="eliminar-usuario btn btn-outline-danger rounded-0">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Juan López</td>
+                                    <td>j.lope123@outlook.es</td>
+                                    <td>123 456 7890</td>
+                                    <td>Calle 123 # 456</td>
+                                    <td>
+                                        <button type="button" id="desbloquear2" class="desbloquear-usuario btn btn-outline-success d-none rounded-0">Desbloquear</button>
+                                        <button type="button" id="bloquear2" class="bloquear-usuario btn btn-outline-warning rounded-0">Bloquear</button>
+                                        <button type="button" id="delete-user2" class="eliminar-usuario btn btn-outline-danger rounded-0">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Juan González</td>
+                                    <td>xXjuanitoGamerXx@hotmail.com</td>
+                                    <td>123 456 7890</td>
+                                    <td>Calle 123 # 456</td>
+                                    <td>
+                                        <button type="button" id="desbloquear3" class="desbloquear-usuario btn btn-outline-success d-none rounded-0">Desbloquear</button>
+                                        <button type="button" id="bloquear3" class="bloquear-usuario btn btn-outline-warning rounded-0">Bloquear</button>
+                                        <button type="button" id="delete-user3" class="eliminar-usuario btn btn-outline-danger rounded-0">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             
             <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
     </section>
@@ -116,5 +386,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Script de la página -->
     <script src="js/script.js"></script>
+    
 </body>
 </html>
