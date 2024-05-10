@@ -136,7 +136,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="rutUser" class="form-label">Rut *</label>
-                                <input type="text" class="form-control rounded-0" id="rutUser" name="rutUser" placeholder="11.222.333-k" oninput="checkRut(this)" required>
+                                <input type="text" class="form-control validar-rut rounded-0" id="rutUser" name="rutUser" placeholder="11.222.333-k" maxlength="10" required>
                                 <div class="invalid-feedback">Ingrese un rut válido</div>
                             </div>
                             <div class="mb-3">
@@ -148,26 +148,31 @@
                                 <label for="telNum" class="form-label">Teléfono *</label>
                                 <div class="input-group">
                                     <span class="input-group-text rounded-0" id="codPais">+56</span>
-                                    <input type="tel" class="form-control rounded-0" name="telNum" id="telNum" aria-describedby="codPais" placeholder="Ej: 987654321" pattern="[0-9]{9}" required/>
+                                    <input type="tel" class="entrada-numeros form-control rounded-0" name="telNum" id="telNum" aria-describedby="codPais" placeholder="Ej: 987654321" pattern="[0-9]{9}" inputmode="tel" maxlength="10" required/>
                                     <div class="invalid-feedback">Ingrese un teléfono valido</div>
                                 </div>
-                                    
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña *</label>
-                                <input type="password" class="form-control rounded-0" name="password" id="password" placeholder="**********" required/>
-                                <div class="invalid-feedback">Ingrese una contraseña válida</div>
+                                <label for="pac-input" class="form-label">Dirección *</label>
+                                <input type="text" class="form-control rounded-0" name="direccion" id="pac-input" placeholder="Ejemplo: Calle 3124, Ciudad, Comuna" required/>
+                                <div id="map"></div>
+                                <div class="invalid-feedback">Por favor ingrese una dirección</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pass" class="form-label">Contraseña *</label>
+                                <input type="password" class="form-control rounded-0" name="pass" id="pass" placeholder="**********" required/>
+                                <div id="clave-no-valida" class="invalid-feedback">Ingrese una contraseña válida</div>
                             </div>
                             <div class="mb-3">
                                 <label for="Re-pass" class="form-label">Confirmar contraseña *</label>
                                 <input type="password" class="form-control rounded-0" name="Re-pass" id="Re-pass" placeholder="**********" required/>
-                                <div class="invalid-feedback">La Contraseña debe coincidir</div>
+                                <div class="invalid-feedback">Las contraseñas no coinciden</div>
                             </div>
                             <hr>
                             <button class="btn btn-success rounded-0" type="submit">Crear Cuenta</button>
                         </form>
                         <div class="card-footer">
-                            <p class="text-center">¿Ya tienes una cuenta? <a href="#btnIniciarSesion">Iniciar Sesión</a></p>
+                            <p class="text-center">¿Ya tienes una cuenta? <a class="abrir-login" href="#">Iniciar Sesión</a></p>
                         </div>
                     </div>
                 </div>
@@ -195,5 +200,10 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Script de la página -->
     <script src="js/script.js"></script>
+    <!-- llamado a google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXNCKw3k07Z0QLw2GOuPjajvS0psHVCX0&region=CL&language=es&libraries=places&callback=initAutocomplete"
+        defer></script>
+    <!-- Script de google maps -->
+    <script src="js/google.maps.script.js"></script>
 </body>
 </html>

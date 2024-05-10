@@ -2,6 +2,7 @@
     "cSpell.words": [
         "ASUS",
         "carruseldeproductos",
+        "Juanito",
         "STRIX",
         "TECHMASTER",
         "TECHMASTERXP"
@@ -9,6 +10,7 @@
     "cSpell.ignoreWords": [
         "Barrabusqueda",
         "Windforce",
-        "descripcion"
+        "descripcion",
+        "direccion"
     ]
 }

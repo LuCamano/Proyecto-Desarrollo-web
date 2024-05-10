@@ -4,7 +4,6 @@ function cambiarValor(idInput, incremento) {
     const nuevoValor = Math.max(valorActual + incremento, 0);
     input.value = nuevoValor;
 }
-
 (() => {
     "use strict";
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -26,7 +25,10 @@ function cambiarValor(idInput, incremento) {
     });
 })();
 
-function checkRut(rut) {
+$('.validar-rut').focus(function (e) { 
+  this.addEventListener("input", function () {
+//function checkRut(rut) {
+  var rut = this;
   // Despejar Puntos
   var valor = rut.value.replace(".", "");
   // Despejar Guión
@@ -80,7 +82,7 @@ function checkRut(rut) {
 
   // Si todo sale bien, eliminar errores (decretar que es válido)
   rut.setCustomValidity("");
-}
+});});
 
 $(".editar-estado").click(function () {
     const botonId = $(this).attr("id");
@@ -126,3 +128,67 @@ $(".desbloquear-usuario").click(function () {
     }
 });
 
+$(".entrada-numeros").keypress(function (e) { 
+    if(e.which < 48 || e.which > 57){
+        e.preventDefault();
+    }
+});
+
+$(".abrir-login").on("click", function () {
+  $("#btnIniciarSesion").trigger("click");
+});
+
+$("#pass").focus(function (e) {
+  this.addEventListener("input", function () {
+    const pass = this;
+    const passValue = pass.value;
+    const passLength = passValue.length;
+    
+    if(passValue === ""){
+      $("#clave-no-valida").text("Ingrese una contraseña");
+    } else if(passLength < 8){
+      pass.setCustomValidity("La contraseña debe tener al menos 8 caracteres");
+      $("#clave-no-valida").text("La contraseña debe tener al menos 8 caracteres");
+    } else if(!passValue.match(/[A-Z]/)){
+      pass.setCustomValidity("La contraseña debe tener al menos una mayúscula");
+      $("#clave-no-valida").text("La contraseña debe tener al menos una mayúscula");
+    } else if(!passValue.match(/[a-z]/)){
+      pass.setCustomValidity("La contraseña debe tener al menos una minúscula");
+      $("#clave-no-valida").text("La contraseña debe tener al menos una minúscula");
+    } else if(!passValue.match(/[0-9]/)){
+      pass.setCustomValidity("La contraseña debe tener al menos un número");
+      $("#clave-no-valida").text("La contraseña debe tener al menos un número");
+    } else {
+      pass.setCustomValidity("");
+    }
+  });
+});
+
+$("#Re-pass").focus(function (e) {
+  this.addEventListener("input", function () {
+    const pass = document.getElementById("pass");
+    const rePass = this;
+    const rePassValue = rePass.value;
+    const passValue = pass.value;
+    
+    console.log(passValue);
+    console.log(rePassValue);
+    if(rePassValue !== passValue){
+      rePass
+      rePass.setCustomValidity("Las contraseñas no coinciden");
+    } else {
+      rePass.setCustomValidity("");
+    }
+  });
+});
+
+$("#editarPerfil").click(function () {
+  $("#nombre").prop("disabled", false);
+  $("#apellido").prop("disabled", false);
+  $("#correo").prop("disabled", false);
+  $("#telefono").prop("disabled", false);
+  $("#pac-input").prop("disabled", false);
+  $("#rut").prop("disabled", false);
+  $("#editarPerfil").toggleClass("d-none");
+  $("#guardarPerfil").toggleClass("d-none");
+});

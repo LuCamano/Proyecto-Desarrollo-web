@@ -91,21 +91,131 @@
         </div>
     </header>
     <!-- Cuerpo de la pagina -->
-    <section>
+    <main>
         <div class="container min-vh-100">
         <!-- EDITAR A PARTIR DE AQUÍ PARA CAMBIAR EL CONTENIDO DE LA PAGINA -->
-            <div class="row py-5 my-5">
-                <div class="position-relative start-50 top-50 translate-middle-x col-12 col-md-4">
-                    <div class="card bg-body-secondary">
+            <div class="row mt-5">
+                <div class="col-12 col-md-4 mb-3">
+                    <div class="card h-100 bg-body-secondary rounded-0">
                         <div class="card-body">
                             <img src="img/blank-profile-picture.png" alt="Foto de perfil" class="img-fluid rounded-circle">
                             <h3 class="card-title text-center">Leopoldo Rivera</h3>
-                            <p class="card-text text-center">Correo: leo.riv@yahoo.com</p>
-                            <p class="card-text text-center">Teléfono: 123 456 7890</p>
-                            <p class="card-text text-center">Dirección: Calle 123 # 456</p>
                         </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 mb-3">
+                    <div class="card bg-body-secondary rounded-0">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h3 class="card-title">Información personal</h3>
+                                <button type="button" id="editarPerfil" class="btn btn-dark rounded-0"><i class="bi bi-pencil-square"></i></button>
+                                
+                            </div>
+                            <form id="datosPerfil" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="mb-3 col-12 col-md-6">
+                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control rounded-0" id="nombre" value="Leopoldo" disabled required>
+                                    </div>
+                                    <div class="mb-3 col-12 col-md-6">
+                                        <label for="apellido" class="form-label">Apellido</label>
+                                        <input type="text" class="form-control rounded-0" id="apellido" name="apellido" value="Rivera" disabled required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-12 col-md-6">
+                                        <label for="correo" class="form-label">Correo</label>
+                                        <input type="email" class="form-control rounded-0" id="correo" name="correo" value="leo.riv@yahoo.com" inputmode="email" disabled required>
+                                    </div>
+                                    <div class="mb-3 col-12 col-md-6">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text rounded-0">+56</span>
+                                            <input type="tel" class="entrada-numeros form-control rounded-0" id="telefono" name="telefono" value="123456789" inputmode="tel" maxlength="9" disabled required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-12">
+                                        <label for="rut" class="form-label">RUT</label>
+                                        <input type="text" class="validar-rut form-control rounded-0" id="rut" name="rut" value="12345678-9" maxlength="10" disabled required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 col-12">
+                                        <label for="direccion" class="form-label">Dirección</label>
+                                        <input type="text" class="form-control rounded-0" id="pac-input" name="direccion" value="Calle 123 # 456" disabled required>
+                                        <div id="map"></div>
+                                    </div>
+                                </div>
+                                <button type="submit" id="guardarPerfil" class="btn btn-dark rounded-0 d-none">Guardar Cambios</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="card bg-body-secondary rounded-0">
+                        <div class="card-header">
+                            <h3 class="card-title">Historial de compras</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">*</th>
+                                            <th scope="col">Producto</th>
+                                            <th scope="col">Precio</th>
+                                            <th scope="col">Fecha</th>
+                                            <th scope="col">Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Intel Core i7-9700</td>
+                                            <td>$400.000</td>
+                                            <td>01/01/2021</td>
+                                            <td>Entregado</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>ASUS Nvidia GeForce RTX3050 ROG STRIX</td>
+                                            <td>$400.000</td>
+                                            <td>01/01/2021</td>
+                                            <td>Entregado</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Intel Core i7-9700</td>
+                                            <td>$400.000</td>
+                                            <td>01/01/2021</td>
+                                            <td>Entregado</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>ASUS Nvidia GeForce RTX3050 ROG STRIX</td>
+                                            <td>$400.000</td>
+                                            <td>01/01/2021</td>
+                                            <td>Entregado</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>Intel Core i7-9700</td>
+                                            <td>$400.000</td>
+                                            <td>01/01/2021</td>
+                                            <td>Entregado</td>
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
-    </section>
+    </main>
     <!-- Footer -->
     <footer>
         <div class="position-relative top-100 start-50 translate-middle-x container-fluid bg-body-tertiary p-5" data-bs-theme="dark">
@@ -127,5 +237,10 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Script de la página -->
     <script src="js/script.js"></script>
+    <!-- llamado a google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXNCKw3k07Z0QLw2GOuPjajvS0psHVCX0&region=CL&language=es&libraries=places&callback=initAutocomplete"
+        async defer></script>
+    <!-- Script de google maps -->
+    <script src="js/google.maps.script.js"></script>
 </body>
 </html>
