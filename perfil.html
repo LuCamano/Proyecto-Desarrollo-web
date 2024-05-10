@@ -144,10 +144,14 @@
                                 <div class="row">
                                     <div class="mb-3 col-12">
                                         <label for="direccion" class="form-label">Dirección</label>
-                                        <input type="text" class="form-control rounded-0" id="pac-input" name="direccion" value="Calle 123 # 456" disabled required>
+                                        <input type="text" class="form-control rounded-0" id="pac-input" name="direccion" value="Calle 123 # 456" placeholder="Calle 1234, Ciudad" disabled required>
                                         <div id="map"></div>
                                     </div>
                                 </div>
+                                <!-- <hr>
+                                <div class="mb-3">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarTarjeta" class="btn btn-outline-success rounded-0">Agregar tarjeta <i class="bi bi-credit-card"></i></button>
+                                </div> -->
                                 <button type="submit" id="guardarPerfil" class="btn btn-dark rounded-0 d-none">Guardar Cambios</button>
                             </form>
                         </div>
@@ -214,7 +218,28 @@
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="modalAgregarTarjeta" tabindex="-1" aria-labelledby="modalAgregarTarjeta"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Agregar una tarjeta</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Formulario de tarjeta -->
+                            <form id="datosTarjeta" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="nroTarjeta" class="form-label">Número de la tarjeta</label>
+                                    <input id="nroTarjeta" class="form-control" type="number">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <!-- DE AQUÍ PARA ABAJO NO SE DEBE EDITAR -->
+        </div>
     </main>
     <!-- Footer -->
     <footer>
